@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Comments from './Comments';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:4000/api';
+const API_BASE = (import.meta.env.VITE_API_BASE || 'http://localhost:4000') + '/api';
 
 export default function PostPage({ token, user, onLogout }) {
   const [post, setPost] = useState(null);

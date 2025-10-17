@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import './LoginPage.css';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:4000/api';
+const API_BASE = (import.meta.env.VITE_API_BASE || 'http://localhost:4000') + '/api';
 
 export default function LoginPage({ onAuth }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -16,7 +16,7 @@ export default function LoginPage({ onAuth }) {
     setLoading(true);
     setError('');
     try {
-      const url = isLogin ? '/api/auth/login' : '/api/auth/register';
+      const url = isLogin ? '/auth/login' : '/auth/register';
       const body = isLogin ? { email, password } : { name, email, password };
       let res, data;
       try {

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 // import './Comments.css';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:4000/api';
+const API_BASE = (import.meta.env.VITE_API_BASE || 'http://localhost:4000') + '/api';
 
 function timeAgo(date) {
   const now = new Date();
