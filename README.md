@@ -76,18 +76,6 @@ Access the application:
 docker-compose -f docker-compose.prod.yml up -d
 ```
 
-### Deployment Options
-
-This project can be deployed to:
-- ✅ **Render** (easiest, recommended) - `render.yaml` included
-- ✅ **Railway** - `railway.json` included
-- ✅ **Fly.io** - `fly.toml` included
-- ✅ **Vercel** (frontend) - `vercel.json` included
-- ✅ **Netlify** (frontend) - `netlify.toml` included
-- ✅ **Azure VM** - Complete guide included
-
-📖 **Full deployment guide**: See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions for each platform.
-
 ## 📦 Tech Stack
 
 - **Frontend**: React 18, Vite, Tailwind CSS 3
