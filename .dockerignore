@@ -1,0 +1,43 @@
+# Node modules
+node_modules
+server/node_modules
+client/node_modules
+
+# Environment files
+.env
+.env.local
+.env.*.local
+server/.env
+client/.env
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Build
+dist
+build
+client/dist
+server/dist
+
+# Docker
+.dockerignore
+
+# Documentation (already in image if needed)
+*.md

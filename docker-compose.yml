@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  # Backend server
+  server:
+    build:
+      context: ./server
+      target: dev
+    container_name: interiit-server-dev
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=development
+      - PORT=4000
+      - MONGO_URI=${MONGO_URI}
+      - JWT_SECRET=${JWT_SECRET:-your-jwt-secret-change-in-production}
+      - ADMIN_SECRET=${ADMIN_SECRET}
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:4000/api/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Frontend client
+  client:
+    build:
+      context: ./client
+      target: dev
+    container_name: interiit-client-dev
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE=http://localhost:4000/api
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    networks:
+      - app-network
+    restart: unless-stopped
+    depends_on:
+      - server
+
+networks:
+  app-network:
+    driver: bridge

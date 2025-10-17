@@ -1,0 +1,45 @@
+# Node modules
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Testing
+coverage
+.nyc_output
+
+# Build (will be created during Docker build)
+dist
+build
+.vite
+
+# Misc
+.dockerignore
+Dockerfile
+docker-compose*.yml
+README.md
+nginx.conf
