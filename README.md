@@ -265,19 +265,6 @@ InterIIT/
 └── README.md
 ```
 
-## 🚀 Deployment
-
-### Backend (Render, Railway, Heroku)
-1. Push code to GitHub
-2. Connect repository to hosting platform
-3. Set environment variables
-4. Deploy
-
-### Frontend (Vercel, Netlify)
-1. Build the client: `cd client && npm run build`
-2. Deploy the `dist` folder
-3. Set environment variable `VITE_API_BASE` to your backend URL
-
 ## 🧪 Testing
 
 **Test Authentication:**
