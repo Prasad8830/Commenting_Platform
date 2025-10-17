@@ -16,7 +16,7 @@ export default function LoginPage({ onAuth }) {
     setLoading(true);
     setError('');
     try {
-      const url = isLogin ? '/auth/login' : '/auth/register';
+      const url = isLogin ? '/api/auth/login' : '/api/auth/register';
       const body = isLogin ? { email, password } : { name, email, password };
       let res, data;
       try {
